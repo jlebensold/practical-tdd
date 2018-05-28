@@ -8,6 +8,7 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 class PastryTest {
 	String[] row = {"Eclair", "0.2", "0.1", "0.3", "0.4", "Crispy", "Creamy"};
@@ -44,7 +45,7 @@ class PastryTest {
 	}
 
 	@Test
-	void testImportFromCSV() {
+	void testImportFromCSV() throws IOException {
 		ArrayList<Pastry> pastries = PastryImporter.fromCSV(fixturePath);
 		assertEquals(8, pastries.size());
 	}

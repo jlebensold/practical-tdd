@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class PastryImporter {
 
-	public static ArrayList<Pastry> fromCSV(String csvFile) {
+	public static ArrayList<Pastry> fromCSV(String csvFile) throws IOException {
 		String line = "";
 		String cvsSplitBy = ",";
 		ArrayList<Pastry> pastries = new ArrayList<Pastry>();
@@ -21,7 +21,7 @@ public class PastryImporter {
 			}
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw e;
 		}		
 		return pastries;
 	}
